@@ -1,5 +1,31 @@
 <?php
-    function generateHeader(){
+
+    function generateHeader($active){
+        echo '
+            <header class="pb-5">
+                <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-lg py-3">
+                <div class="container-fluid">
+                    <a class="navbar-brand mx-3" href="#">🥗 Sanapati Food Store</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mx-2 me-auto">
+                        <li class="nav-item"><a href="'.($active == 'home'  ? '#' : 'index.php' ).'" class="nav-link px-2 link-'.($active == 'home'  ? 'dark' : 'secondary').'">Home</a></li>
+                        <li class="nav-item"><a href="'.($active == 'store' ? '#' : 'store.php').'" class="nav-link px-2 link-'.($active == 'store' ? 'dark' : 'secondary').'">Store</a></li>
+                        <li class="nav-item"><a href="'.($active == 'about' ? '#' : 'https://instagram.com/fadelazzahraa').'" class="nav-link px-2 link-'.($active == 'about' ? 'dark' : 'secondary').'">About</a></li>
+                    </ul>
+                    <div class="d-flex mx-3 mx-md-2" role="search">';
+        generateTailHeader();
+        echo '</div>
+                    </div>
+                </div>
+                </nav>
+            </header>
+        ';
+    }
+
+    function generateTailHeader(){
         if (empty($_SESSION['loggedIn'])){
         echo '<a href="login.php">';
         echo '<button type="button" class="btn btn-outline-primary me-2">Login</button>';

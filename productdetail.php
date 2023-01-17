@@ -39,24 +39,9 @@
 <body>
 
 
-  <header class="d-flex flex-wrap justify-content-center justify-content-md-between p-4 sticky-top bg-light shadow">
-    <a href="#" class="d-flex align-items-center col-md-4 mb-md-0 text-dark text-decoration-none">
-      <span class="fs-4 text-dark fw-bold">🥗 Sanapati Food Store</span>
-    </a>
-
-    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-      <li><a href="index.php" class="nav-link px-2 link-secondary">Home</a></li>
-      <li><a href="store.php" class="nav-link px-2 link-dark">Store</a></li>
-      <li><a href="#" class="nav-link px-2 link-secondary">About</a></li>
-    </ul>
-
-    <div class="col-md-4 text-end">
-    <?php
-      generateHeader();
-      ?>
-      
-    </div>
-  </header>
+  <?php
+    generateHeader('store');
+  ?>
 
   <div class="container p-5 my-5">
     <div class="row">
