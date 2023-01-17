@@ -1,5 +1,6 @@
 <?php
     include 'dbconnect.php';
+    include 'cart.php';
     
     if (!empty($_POST)){
         session_start();

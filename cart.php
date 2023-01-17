@@ -34,37 +34,39 @@
                     <h6 class="card-title text-center mb-5 text-light">Sanapati Food Store</h6>
                     <hr style="border-top: 1px solid white;">
                     <p class="text-primary text-center">Check your order below</p>
-                    <table class="table table-borderless table-hover table-dark">
-                        <thead>
-                            <tr>
-                            <th scope="col" class="th-lg">#</th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">Price</th>
-                            <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                $idx = 1;
-                                $totalprice = 0;
-                                foreach ($products as $product){
-                                    if ($_SESSION['cart'][$product['id']] != 0){
-                                        $price = $product['price'] * $_SESSION['cart'][$product['id']];
-                                        $totalprice = $totalprice + $price;
-                                        echo '<tr>';
-                                        echo '<th scope="row">'.$idx .'</th>';
-                                        echo '<td>'. $product['name'] .'</td>';
-                                        echo '<td>'. $_SESSION['cart'][$product['id']] .'</td>';
-                                        echo '<td>Rp'. $price .',00</td>';
-                                        echo '<td><a href="function/deletefromcartbutton.php?id='. $product['id'].'"><button type="button" class="btn btn-outline-danger btn-sm">-1</button></a></td>';
-                                        echo '</tr>';
-                                        $idx = $idx + 1;
+                    <div class="table-responsive">
+                        <table class="table table-borderless table-hover table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="th-lg">#</th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Qty</th>
+                                <th scope="col">Price</th>
+                                <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                    $idx = 1;
+                                    $totalprice = 0;
+                                    foreach ($products as $product){
+                                        if ($_SESSION['cart'][$product['id']] != 0){
+                                            $price = $product['price'] * $_SESSION['cart'][$product['id']];
+                                            $totalprice = $totalprice + $price;
+                                            echo '<tr>';
+                                            echo '<th scope="row">'.$idx .'</th>';
+                                            echo '<td>'. $product['name'] .'</td>';
+                                            echo '<td>'. $_SESSION['cart'][$product['id']] .'</td>';
+                                            echo '<td>Rp'. $price .',00</td>';
+                                            echo '<td><a href="function/deletefromcartbutton.php?id='. $product['id'].'"><button type="button" class="btn btn-outline-danger btn-sm">-1</button></a></td>';
+                                            echo '</tr>';
+                                            $idx = $idx + 1;
+                                        }
                                     }
-                                }
-                            ?>
-                        </tbody>
-                    </table>
+                                    ?>
+                            </tbody>
+                        </table>
+                    </div>
                     <div class="row px-5 py-3">
                         <div class="col-sm">
                             <p class="text-light text-sm-right text-center">Total price you should pay:</p>

@@ -8,17 +8,29 @@
         echo '<button type="button" class="btn btn-primary">Sign up</button>';
         echo ' </a>';
         } else {
-        echo '<a href="editprofile.php">';
-        echo '<button type="button" class="btn me-2">👤 ' . $_SESSION['name'] . '</button>';
-        echo '</a>';
-        if ($_SESSION['role'] == 'admin'){
-            echo '<a href="productadd.php">';
-            echo '<button type="button" class="btn btn-outline-success me-2">Add product</button>';
-            echo '</a>';
-        }
-        echo '<a href="function/logout.php">';
-        echo '<button type="button" class="btn btn-outline-danger">Logout</button>';
-        echo '</a>';
+        echo '
+        <div class="btn-group">
+            <button type="button" class="btn btn-outline dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            👤 '.$_SESSION['name'].'
+            </button>
+            <ul class="dropdown-menu">
+            ';
+            if ($_SESSION['role'] == 'admin'){
+                echo '
+                <li><a class="dropdown-item" href="productadd.php">🖍 Add product</a></li>
+                <li><a class="dropdown-item" href="manageuser.php">💼 Manage user</a></li>
+                <li><hr class="dropdown-divider"></li>
+                ';
+            }
+            echo '
+                <li><a class="dropdown-item" href="editprofile.php">✏️ Edit profile</a></li>   
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="function/logout.php">🗝️ Logout</a></li>
+                </ul>
+            </div>
+        ';
+
+
         }
     }
 ?>

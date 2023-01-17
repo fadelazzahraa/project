@@ -14,9 +14,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
   <link rel="icon" href="img/radioactive.svg" />
   <title>Store | Sanapati Food Store</title>
@@ -49,9 +47,8 @@
       <?php
       generateHeader();
       ?>
-    </div>
   </header>
-
+  
   <div class="container p-5 my-5">
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 gy-5">
     
@@ -67,7 +64,7 @@
           echo '<h4 class="card-title">'.$product['name'].'</h4>';
           echo '<p class="card-text text-truncate">' . $product['description'].'</p>';
           echo '<h5 class="card-text text-dark">Rp'. $product['price'].',00</h5>';
-          echo '<p class="card-text text-success mt-2 mb-3">Qty left: '. $product['qty'].'</p>';
+          echo '<p class="card-text text-'.($product['qty'] > 3 ? "success" : ($product['qty'] == 0 ? "danger" : "warning")).' mt-2 mb-3">Qty left: '. $product['qty'].'</p>';
           echo '<a href="productdetail.php?id='.$product['id']. '" class="btn btn-dark me-2">Detail</a>';
           if (!empty($_SESSION['loggedIn']) && $product['qty']!=0 && $product['qty'] != $_SESSION['cart'][$product['id']]){
             echo '<a href="function/addtocartbutton.php?id='. $product['id'].'&origin=store.php" class="btn btn-primary me-2">Add to cart</a>';
@@ -105,7 +102,10 @@
   </footer>
   <!-- End of Footer -->
 
-
+  <!-- Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <!-- End of Script -->
 </body>
 
 </html>

@@ -4,7 +4,7 @@
     include 'function/dbconnect.php';
     include 'function/cart.php';
     include 'template/header.php';
-    
+  
 
     if (!empty($_GET)){
       if (isset($_GET['id'])){
@@ -71,7 +71,7 @@
             <h1 class="pt-4"><?=$product['name']?></h1>
             <p style="text-align:justify;" class="text-align-justify"><?=$product['description']?></p>
             <h3>Rp<?=$product['price']?>,00</h3>
-            <p style="color:green;">Qty left: <?=$product['qty']?></p>
+            <p class="text-<?=($product['qty'] > 3 ? "success" : ($product['qty'] == 0 ? "danger" : "warning"))?>">Qty left: <?=$product['qty']?></p>
             <?php
             if (!empty($_SESSION['loggedIn']) && $product['qty']!=0 && $product['qty'] != $_SESSION['cart'][$product['id']]){
               echo '<a href="function/addtocartbutton.php?id='.$product['id'].'&origin=productdetail.php?id='.$product['id']. '" class="btn btn-primary me-1">Add to cart</a>';
@@ -106,7 +106,10 @@
   </footer>
   <!-- End of Footer -->
 
-
+  <!-- Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <!-- End of Script -->
 </body>
 
 </html>
