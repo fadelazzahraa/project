@@ -39,7 +39,7 @@
             <button type="button" class="btn btn-outline dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             👤 '.$_SESSION['name'].'
             </button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu dropdown-menu-md-end">
             ';
             if ($_SESSION['role'] == 'admin'){
                 echo '
