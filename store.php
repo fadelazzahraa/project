@@ -4,6 +4,7 @@
     include 'function/dbfetch.php';
     include 'function/cart.php';
     include 'template/header.php';
+    include 'template/footer.php';
 
 ?>
 
@@ -81,11 +82,9 @@
   ?>
   <br>
   <!-- Footer -->
-  <footer class="footer py-5 bg-dark text-center">
-    <span class="text-white">Made with <span style="color:red;">♥</span> by Fadel Azzahra</span>
-    <br>
-    <span class="text-white">Copyright © 2023</span>
-  </footer>
+  <?php
+  generateFooter();
+  ?>
   <!-- End of Footer -->
 
   <!-- Script -->
