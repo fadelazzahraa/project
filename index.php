@@ -1,7 +1,7 @@
 <?php
-    session_start();
-    include 'template/header.php';
-    include 'template/footer.php';
+session_start();
+include 'template/header.php';
+include 'template/footer.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,7 @@
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
 
-  <link rel="icon" href="img/radioactive.svg" />
+  <link rel="icon" href="image/favicon.ico" type="image/x-icon">
   <title>Sanapati Food Store</title>
 </head>
 
@@ -22,7 +22,7 @@
 
 
   <?php
-    generateHeader('home');
+  generateHeader('home');
   ?>
 
   <div class="container py-3">
@@ -40,7 +40,8 @@
           <p class="fs-4 text-center">Welcome to Sanapati Food Store website! Go find out what you need right now!</p>
           <a href="function/actionbutton.php" style="text-decoration:none">
             <div class="d-grid col-6 mx-auto">
-              <button class="btn btn-lg btn-primary shadow-lg" type="button"><i class="bi bi-search"></i> Go shopping!</button>
+              <button class="btn btn-lg btn-primary shadow-lg" type="button"><i class="bi bi-search"></i> Go
+                shopping!</button>
             </div>
           </a>
         </div>
@@ -52,13 +53,17 @@
 
   <!-- Footer -->
   <?php
-    generateFooter();
+  generateFooter();
   ?>
   <!-- End of Footer -->
 
   <!-- Script -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
   <!-- End of Script -->
 </body>
 

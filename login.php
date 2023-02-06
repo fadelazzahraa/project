@@ -8,7 +8,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <title>Login Page | Sanapati Food Store</title>
 </head>
@@ -23,11 +23,11 @@
                 <h6 class="card-title text-center mb-5">Sanapati Food Store</h6>
                 <hr>
                 <?php
-                    if (empty($_GET)){
-                        echo '<p class="text-success text-center">Submit form below</p>';
-                    } else {
-                        echo '<p class="text-success text-center">' . $_GET['msg'] .'</p>';
-                    }
+                if (empty($_GET)) {
+                    echo '<p class="text-success text-center">Submit form below</p>';
+                } else {
+                    echo '<p class="text-success text-center">' . $_GET['msg'] . '</p>';
+                }
                 ?>
                 <form class="form-signin" method="post" action="function/login.php">
                     <div class="form-group">
@@ -47,7 +47,8 @@
                         </div> <!-- input-group.// -->
                     </div> <!-- form-group// -->
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block" name="Login" value="Login">Login</button>
+                        <button type="submit" class="btn btn-primary btn-block" name="Login"
+                            value="Login">Login</button>
                     </div> <!-- form-group// -->
                     <hr>
                     <p class="text-center"><a href="signup.php" class="btn">Don't have account yet? Sign up</a></p>
